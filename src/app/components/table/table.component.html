@@ -1,0 +1,48 @@
+<mat-form-field>
+  <input
+    matInput
+    (keyup)="applyFilter($event.target.value)"
+    placeholder="Filter"
+  />
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+    <!-- Personagem Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Personagem</th>
+      <td mat-cell *matCellDef="let row">
+        <img
+          src="{{ row.thumbnail.path + '.' + row.thumbnail.extension }}"
+          alt="Avatar"
+        />
+        <span>{{ row.name }}</span>
+      </td>
+    </ng-container>
+
+    <!-- Séries Column -->
+    <ng-container matColumnDef="series">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Séries</th>
+      <td mat-cell *matCellDef="let row">
+        <p *ngFor="let serie of row.series.items; let i = index">
+          <span *ngIf="i < 3">{{ serie.name }}</span>
+        </p>
+      </td>
+    </ng-container>
+
+    <!-- Eventos Column -->
+    <ng-container matColumnDef="events">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Eventos</th>
+      <td mat-cell *matCellDef="let row">
+        <p *ngFor="let event of row.events.items; let i = index">
+          <span *ngIf="i < 3">{{ event.name }}</span>
+        </p>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
