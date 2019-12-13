@@ -16,12 +16,12 @@ img {
 
 td, th {
   width: 25%;
-  border-bottom: 2px solid #ddd;
   padding: 10px;
   font-size: 1.2rem;
 }
 
 td{
+  border-bottom: 2px solid rgba(212, 32, 38, 0.4);;
   padding-top: 12px;
   padding-bottom: 12px;
   height: 112px;
@@ -38,6 +38,10 @@ th {
 th:nth-child(n+2){
   border-left: 10px solid #FFF;
   padding-left: 10px;
+}
+
+th.mat-header-cell{
+  border-bottom-style: none;
 }
 
 tr:hover {
