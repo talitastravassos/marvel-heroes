@@ -1,5 +1,7 @@
 import { MarvelService } from "./../../services/marvel.service";
 import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { Store } from "@ngrx/store";
 
 @Component({
   selector: "app-home",
@@ -7,14 +9,20 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  charactersList: any[] = [];
+  charactersList: Observable<{ marvel: any }>;
 
-  constructor(private marvelService: MarvelService) {}
+  constructor(
+    private marvelService: MarvelService,
+    private store: Store<{ marvel: any }>
+  ) {}
 
   ngOnInit() {
-    this.marvelService.getCharacters().subscribe((res: any) => {
-      this.charactersList = res.data.results;
-      console.log(this.charactersList);
-    });
+    this.marvelService.getCharacters();
+
+    this.store
+      .select("marvel")
+      .subscribe(state => (this.charactersList = state.heroes));
+
+    this.store.select("marvel").subscribe(state => console.log(state));
   }
 }

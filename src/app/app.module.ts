@@ -16,6 +16,9 @@ import {
   MatSortModule
 } from "@angular/material";
 
+import { StoreModule } from "@ngrx/store";
+import { MarvelReducer } from "./store/reducers";
+
 const matModules = [
   MatTableModule,
   MatPaginatorModule,
@@ -31,6 +34,7 @@ const matModules = [
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({ marvel: MarvelReducer }),
     [...matModules]
   ],
   providers: [],
