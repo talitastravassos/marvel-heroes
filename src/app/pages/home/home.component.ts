@@ -1,7 +1,7 @@
-import { MarvelService } from "./../../services/marvel.service";
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { Store } from "@ngrx/store";
+import { MarvelService } from "./../../services/marvel.service";
 
 @Component({
   selector: "app-home",
@@ -18,12 +18,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.marvelService.getCharacters();
-    this.marvelService.getSearch("captain");
 
     this.store
       .select("marvel")
       .subscribe(state => (this.charactersList = state.heroes));
 
-    this.store.select("marvel").subscribe(state => console.log(state));
+    // this.store.select("marvel").subscribe(state => console.log(state));
   }
 }

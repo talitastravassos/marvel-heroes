@@ -1,7 +1,11 @@
-import { Component, OnInit, ViewChild, Input } from "@angular/core";
-import { MatPaginator } from "@angular/material/paginator";
-import { MatSort } from "@angular/material/sort";
-import { MatTableDataSource } from "@angular/material/table";
+import {
+  Component,
+  ViewChild,
+  Input,
+  OnChanges,
+  SimpleChanges
+} from "@angular/core";
+import { MatPaginator, MatSort, MatTableDataSource } from "@angular/material";
 
 export interface HeroData {
   name: string;
@@ -18,7 +22,7 @@ export interface HeroData {
   templateUrl: "./table.component.html",
   styleUrls: ["./table.component.scss"]
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnChanges {
   @Input() data: any[] = [];
 
   displayedColumns: string[] = ["name", "series", "events"];
@@ -27,21 +31,13 @@ export class TableComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-    this.dataSource = new MatTableDataSource(this.data);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-    // console.log(this.dataSource)
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.data) {
+      this.dataSource = new MatTableDataSource(this.data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     }
   }
 }
-

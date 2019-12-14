@@ -1,9 +1,10 @@
-<form>
+<form [formGroup]="searchForm">
   <label for="search">Nome do Personagem</label>
   <input
     type="text"
     id="search"
     class="input-search"
+    formControlName="search"
     placeholder="Pesquise por outros personagens"
   >
 </form>

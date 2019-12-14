@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -18,7 +19,7 @@ import {
 
 import { StoreModule } from "@ngrx/store";
 import { MarvelReducer } from "./store/reducers";
-import { SearchInputComponent } from './components/search-input/search-input.component';
+import { SearchInputComponent } from "./components/search-input/search-input.component";
 
 const matModules = [
   MatTableModule,
@@ -29,11 +30,18 @@ const matModules = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, TableComponent, SearchInputComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    TableComponent,
+    SearchInputComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({ marvel: MarvelReducer }),
     [...matModules]
