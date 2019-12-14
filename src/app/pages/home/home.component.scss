@@ -1,3 +1,18 @@
 .home{
-  margin: 5%;
+  margin: 20px 42px;
+}
+
+h2{
+  color: #D42026;
+  font-weight: lighter;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bold-text{
+  font-weight: bold;
 }
