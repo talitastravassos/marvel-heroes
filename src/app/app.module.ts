@@ -20,6 +20,7 @@ import {
 import { StoreModule } from "@ngrx/store";
 import { MarvelReducer } from "./store/reducers";
 import { SearchInputComponent } from "./components/search-input/search-input.component";
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 const matModules = [
   MatTableModule,
@@ -44,7 +45,8 @@ const matModules = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({ marvel: MarvelReducer }),
-    [...matModules]
+    [...matModules],
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

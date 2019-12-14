@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { NgxSpinnerService } from "ngx-spinner";
 import { MarvelService } from "src/app/services/marvel.service";
 
 @Component({
@@ -12,7 +13,8 @@ export class SearchInputComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private marvelService: MarvelService
+    private marvelService: MarvelService,
+    private spinner: NgxSpinnerService
   ) {}
 
   ngOnInit() {
@@ -22,11 +24,19 @@ export class SearchInputComponent implements OnInit {
 
     this.searchForm.valueChanges.subscribe(res => {
       // console.log(res);
+      this.spinner.show();
 
       setTimeout(() => {
-        this.marvelService.getSearch(res.search);
-      }, 2000);
-      // this.tvshowService.search(res.search, 1)
+        if (res.search !== "") {
+          this.marvelService.getSearch(res.search);
+        } else {
+          this.marvelService.getCharacters();
+        }
+      }, 1000);
+
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 1500);
     });
   }
 }
