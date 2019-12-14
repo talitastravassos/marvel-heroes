@@ -1,0 +1,25 @@
+input, label {
+  display:block;
+}
+
+label{
+  color: #D42026;
+  font-weight: 700;
+}
+
+.input-search{
+  width: 400px;
+  height: 31px;
+  margin: 0px;
+  height: 35px;
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+  padding: 5px;
+      // "&:focus": {
+      //   outline: "2px solid rgba(81, 203, 238, 1)"
+      // }
+}
+
+.input-search:focus{
+  outline: 2px solid rgba(212, 32, 38, 0.4);
+}

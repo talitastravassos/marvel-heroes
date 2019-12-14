@@ -18,6 +18,7 @@ import {
 
 import { StoreModule } from "@ngrx/store";
 import { MarvelReducer } from "./store/reducers";
+import { SearchInputComponent } from './components/search-input/search-input.component';
 
 const matModules = [
   MatTableModule,
@@ -28,7 +29,7 @@ const matModules = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, TableComponent],
+  declarations: [AppComponent, HomeComponent, TableComponent, SearchInputComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
