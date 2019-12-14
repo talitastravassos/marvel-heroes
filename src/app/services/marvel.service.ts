@@ -27,4 +27,17 @@ export class MarvelService {
         this.store.dispatch(new FetchActions.FetchHeroes(res.data.results));
       });
   }
+
+  // get search characters
+  getSearch(query: string) {
+    this.http
+      .get(
+        `${this.BASE_URL}nameStartsWith=${query}&limit=100&ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`
+      )
+      .subscribe((res: any) => {
+        console.log(res);
+        // this.store.dispatch(new FetchActions.FetchSearch(res.data.results));
+      });
+  }
+
 }

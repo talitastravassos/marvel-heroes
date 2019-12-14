@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.marvelService.getCharacters();
+    this.marvelService.getSearch("captain");
 
     this.store
       .select("marvel")
