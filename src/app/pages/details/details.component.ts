@@ -33,6 +33,11 @@ export class DetailsComponent implements OnInit {
       this.series = res.data.results;
     });
 
+    this.marvelService.getEvents(this.id).subscribe((res: any) => {
+      console.log(res);
+      this.events = res.data.results;
+    });
+
     this.store.select("marvel").subscribe(state => console.log(state));
     this.store
       .select("marvel")

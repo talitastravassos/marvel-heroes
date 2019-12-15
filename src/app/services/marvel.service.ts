@@ -40,14 +40,15 @@ export class MarvelService {
   }
 
   getSeries(id: string) {
-    return this.http
-      .get(
-        `${this.BASE_URL}/${id}/series?limit=100&ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`
-      )
-      // .subscribe((res: any) => {
-      //   // console.log(res);
-      //   this.store.dispatch(new FetchActions.SelectHero(res.data.results[0]));
-      // });
+    return this.http.get(
+      `${this.BASE_URL}/${id}/series?limit=100&ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`
+    );
+  }
+
+  getEvents(id: string) {
+    return this.http.get(
+      `${this.BASE_URL}/${id}/events?limit=100&ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`
+    );
   }
 
   // get search characters
@@ -61,5 +62,4 @@ export class MarvelService {
         this.store.dispatch(new FetchActions.FetchSearch(res.data.results));
       });
   }
-
 }
