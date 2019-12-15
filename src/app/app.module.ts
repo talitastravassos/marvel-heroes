@@ -21,6 +21,7 @@ import { StoreModule } from "@ngrx/store";
 import { MarvelReducer } from "./store/reducers";
 import { SearchInputComponent } from "./components/search-input/search-input.component";
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { DetailsComponent } from './pages/details/details.component';
 
 const matModules = [
   MatTableModule,
@@ -35,7 +36,8 @@ const matModules = [
     AppComponent,
     HomeComponent,
     TableComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

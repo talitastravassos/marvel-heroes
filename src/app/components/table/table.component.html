@@ -3,7 +3,7 @@
     <!-- Personagem Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Personagem</th>
-      <td mat-cell *matCellDef="let row">
+      <td mat-cell *matCellDef="let row" [routerLink]="['/details', row.name, row.id]">
         <img
           src="{{ row.thumbnail.path + '.' + row.thumbnail.extension }}"
           alt="Avatar"
@@ -15,7 +15,7 @@
     <!-- Séries Column -->
     <ng-container matColumnDef="series">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Séries</th>
-      <td mat-cell *matCellDef="let row">
+      <td mat-cell *matCellDef="let row" [routerLink]="['/details', row.name, row.id]">
         <p *ngFor="let serie of row.series.items; let i = index">
           <span *ngIf="i < 3">{{ serie.name }}</span>
         </p>
@@ -25,7 +25,7 @@
     <!-- Eventos Column -->
     <ng-container matColumnDef="events">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Eventos</th>
-      <td mat-cell *matCellDef="let row">
+      <td mat-cell *matCellDef="let row" [routerLink]="['/details', row.name, row.id]">
         <p *ngFor="let event of row.events.items; let i = index">
           <span *ngIf="i < 3">{{ event.name }}</span>
         </p>
