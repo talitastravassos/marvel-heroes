@@ -12,7 +12,7 @@ export class DetailsComponent implements OnInit {
   id: string;
   hero: any;
   series: any[] = [];
-  events: any[] = [];
+  events: any[];
 
   constructor(
     private marvelService: MarvelService,
@@ -29,12 +29,12 @@ export class DetailsComponent implements OnInit {
 
     this.marvelService.getCharacter(this.id);
     this.marvelService.getSeries(this.id).subscribe((res: any) => {
-      console.log(res);
+      // console.log(res);
       this.series = res.data.results;
     });
 
     this.marvelService.getEvents(this.id).subscribe((res: any) => {
-      // console.log(res);
+      console.log(res);
       this.events = res.data.results;
     });
 

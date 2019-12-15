@@ -23,6 +23,7 @@ import { SearchInputComponent } from "./components/search-input/search-input.com
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { DetailsComponent } from './pages/details/details.component';
 import { SeriesTableComponent } from './components/series-table/series-table.component';
+import { EventCardComponent } from './components/event-card/event-card.component';
 
 const matModules = [
   MatTableModule,
@@ -39,7 +40,8 @@ const matModules = [
     TableComponent,
     SearchInputComponent,
     DetailsComponent,
-    SeriesTableComponent
+    SeriesTableComponent,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,

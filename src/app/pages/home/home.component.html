@@ -1,12 +1,16 @@
 <div class="home" *ngIf="charactersList.length > 0">
-  <div class="header">
+  <section id="header">
     <h2>
       <span class="bold-text">
         <span style="text-decoration: underline #D42026;">BUS</span>CA MARVEL</span>
       <span>TESTE FRONT-END</span>
     </h2>
     <h2>TALITA S. TRAVASSOS</h2>
-  </div>
-  <search-input></search-input>
-  <app-table [data]="charactersList"></app-table>
+  </section>
+  <section id="search">
+    <search-input></search-input>
+  </section>
+  <section id="table">
+    <app-table [data]="charactersList"></app-table>
+  </section>
 </div>

@@ -1,13 +1,22 @@
 <div class="container-page">
-  <div class="container-details">
+  <section class="container-details">
     <h1>{{ hero.name }}</h1>
-    <img src="{{ hero.thumbnail.path + '.' + hero.thumbnail.extension }}" alt={{hero.name}} class="hero-image">
-  </div>
-  <div class="container-series">
+    <img
+      src="{{ hero.thumbnail.path + '.' + hero.thumbnail.extension }}"
+      alt="{{ hero.name }}"
+      class="hero-image"
+    />
+  </section>
+  <section class="container-series">
     <h2>Séries</h2>
     <app-series-table [data]="series"></app-series-table>
-  </div>
-  <div class="container-events">
+  </section>
+  <section class="container-events">
     <h2>Eventos</h2>
-  </div>
+    <div class="events-list">
+      <div *ngFor="let event of events" style="width: 200px;">
+        <app-event-card [event]="event"></app-event-card>
+      </div>
+    </div>
+  </section>
 </div>
