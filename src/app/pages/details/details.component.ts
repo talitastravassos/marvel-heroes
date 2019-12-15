@@ -11,6 +11,8 @@ import { ActivatedRoute } from "@angular/router";
 export class DetailsComponent implements OnInit {
   id: string;
   hero: any;
+  series: any[] = [];
+  events: any[] = [];
 
   constructor(
     private marvelService: MarvelService,
@@ -26,8 +28,14 @@ export class DetailsComponent implements OnInit {
       });
 
     this.marvelService.getCharacter(this.id);
+    this.marvelService.getSeries(this.id).subscribe((res: any) => {
+      // console.log(res);
+      this.series = res.data.results;
+    });
 
     this.store.select("marvel").subscribe(state => console.log(state));
-    this.store.select("marvel").subscribe(state => (this.hero = state.heroSelected));
+    this.store
+      .select("marvel")
+      .subscribe(state => (this.hero = state.heroSelected));
   }
 }
