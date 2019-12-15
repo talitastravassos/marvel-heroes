@@ -7,26 +7,23 @@ import {
 } from "@angular/core";
 import { MatPaginator, MatSort, MatTableDataSource } from "@angular/material";
 
-export interface HeroData {
-  name: string;
-  series: any;
-  events: any;
+export interface SeriesData {
+  title: string;
+  years: any;
+  type: string;
+  url: any;
 }
 
-/**
- * @title Data table with sorting, pagination.
- */
 @Component({
-  // tslint:disable-next-line: component-selector
-  selector: "app-table",
-  templateUrl: "./table.component.html",
-  styleUrls: ["./table.component.scss"]
+  selector: "app-series-table",
+  templateUrl: "./series-table.component.html",
+  styleUrls: ["./series-table.component.scss"]
 })
-export class TableComponent implements OnChanges {
+export class SeriesTableComponent implements OnChanges {
   @Input() data: any[] = [];
 
-  displayedColumns: string[] = ["name", "series", "events"];
-  dataSource: MatTableDataSource<HeroData>;
+  displayedColumns: string[] = ["title", "years", "type", "details"];
+  dataSource: MatTableDataSource<SeriesData>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;

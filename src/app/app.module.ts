@@ -22,6 +22,7 @@ import { MarvelReducer } from "./store/reducers";
 import { SearchInputComponent } from "./components/search-input/search-input.component";
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { DetailsComponent } from './pages/details/details.component';
+import { SeriesTableComponent } from './components/series-table/series-table.component';
 
 const matModules = [
   MatTableModule,
@@ -37,7 +38,8 @@ const matModules = [
     HomeComponent,
     TableComponent,
     SearchInputComponent,
-    DetailsComponent
+    DetailsComponent,
+    SeriesTableComponent
   ],
   imports: [
     BrowserModule,
