@@ -10,6 +10,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class DetailsComponent implements OnInit {
   id: string;
+  hero: any;
 
   constructor(
     private marvelService: MarvelService,
@@ -20,12 +21,13 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     this.activateRoute.paramMap // get id from param
       .subscribe(param => {
-        console.log(param);
+        // console.log(param);
         this.id = param.get("id");
       });
 
     this.marvelService.getCharacter(this.id);
 
     this.store.select("marvel").subscribe(state => console.log(state));
+    this.store.select("marvel").subscribe(state => (this.hero = state.heroSelected));
   }
 }

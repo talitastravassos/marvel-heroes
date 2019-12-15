@@ -46,7 +46,7 @@ export class MarvelService {
         `${this.BASE_URL}?nameStartsWith=${query}&limit=100&ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`
       )
       .subscribe((res: any) => {
-        console.log(res);
+        // console.log(res);
         this.store.dispatch(new FetchActions.FetchSearch(res.data.results));
       });
   }
