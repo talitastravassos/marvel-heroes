@@ -24,6 +24,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { DetailsComponent } from './pages/details/details.component';
 import { SeriesTableComponent } from './components/series-table/series-table.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const matModules = [
   MatTableModule,
@@ -41,7 +42,8 @@ const matModules = [
     SearchInputComponent,
     DetailsComponent,
     SeriesTableComponent,
-    EventCardComponent
+    EventCardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
