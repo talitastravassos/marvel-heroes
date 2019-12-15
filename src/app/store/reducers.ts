@@ -1,7 +1,8 @@
 import * as FetchActions from "./actions";
 
 const initialState = {
-  heroes: []
+  heroes: [],
+  heroSelected: {}
 };
 
 export function MarvelReducer(
@@ -18,6 +19,11 @@ export function MarvelReducer(
       return {
         ...state,
         heroes: action.payload
+      };
+    case FetchActions.SELECT_HERO:
+      return {
+        ...state,
+        heroSelected: action.payload
       };
     default:
       return state;
