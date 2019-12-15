@@ -1,11 +1,14 @@
 <div class="container-page">
+  <h1>{{ hero.name }}</h1>
   <section class="container-details">
-    <h1>{{ hero.name }}</h1>
-    <img
-      src="{{ hero.thumbnail.path + '.' + hero.thumbnail.extension }}"
-      alt="{{ hero.name }}"
-      class="hero-image"
-    />
+    <img src="{{ hero.thumbnail.path + '.' + hero.thumbnail.extension }}" alt="{{ hero.name }}" class="hero-image" />
+    <div class="hero-info">
+      <h3> {{ hero.description }} </h3>
+      <div class="buttons">
+        <a href="{{ hero.urls[0].url }}" target="_blank" rel="noopener noreferrer">DETALHES</a>
+        <a href="{{ hero.urls[1].url }}" target="_blank" rel="noopener noreferrer">MARVEL WIKI</a>
+      </div>
+    </div>
   </section>
   <section class="container-series">
     <h2>Séries</h2>
