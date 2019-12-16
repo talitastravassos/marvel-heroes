@@ -17,4 +17,7 @@ In the project directory:
 ### Screenshot
 ![MarvelHeroes Screenshot](https://i.imgur.com/UxnjqAq.png)
 
+### Live Demo
+- https://tst-marvelheroes.netlify.com/
+
 That's it 😉
