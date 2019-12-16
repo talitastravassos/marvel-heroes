@@ -1,4 +1,13 @@
-.container-page {
+h1,
+h2 {
+  color: #d42026;
+}
+
+h3 {
+  font-weight: lighter;
+}
+
+#container-page {
   margin: 20px 42px;
 
   @media only screen and (max-width: 800px) {
@@ -6,7 +15,7 @@
   }
 }
 
-.container-details {
+#container-details {
   display: flex;
 
   @media only screen and (max-width: 800px) {
@@ -27,21 +36,12 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin: 10px;
   }
 
-  a:hover{
+  a:hover {
     background-color: rgba(212, 32, 38, 0.733);
-
   }
-}
-
-h1,
-h2 {
-  color: #d42026;
-}
-
-h3{
-  font-weight: lighter;
 }
 
 .hero-image {
@@ -62,7 +62,6 @@ h3{
 
 .events-list {
   display: flex;
-  // flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 

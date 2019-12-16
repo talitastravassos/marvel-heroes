@@ -1,21 +1,39 @@
 <app-navbar></app-navbar>
-<div class="container-page">
+<div id="container-page">
   <h1>{{ hero.name }}</h1>
-  <section class="container-details">
-    <img src="{{ hero.thumbnail.path + '.' + hero.thumbnail.extension }}" alt="{{ hero.name }}" class="hero-image" />
+  <section id="container-details">
+    <img
+      src="{{ hero.thumbnail.path + '.' + hero.thumbnail.extension }}"
+      alt="{{ hero.name }}"
+      class="hero-image"
+    />
     <div class="hero-info">
-      <h3> {{ hero.description }} </h3>
+      <h3>{{ hero.description }}</h3>
       <div class="buttons">
-        <a href="{{ hero.urls[0].url }}" target="_blank" rel="noopener noreferrer">DETALHES</a>
-        <a href="{{ hero.urls[1].url }}" target="_blank" rel="noopener noreferrer">MARVEL WIKI</a>
+        <a
+          href="{{ hero.urls[0].url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          >DETALHES</a
+        >
+        <a
+          href="{{ hero.urls[1].url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          >MARVEL WIKI</a
+        >
       </div>
     </div>
   </section>
-  <section class="container-series">
+  <section id="container-series">
     <h2>Séries</h2>
-    <app-series-table [data]="series"></app-series-table>
+    <app-series-table
+      [data]="series"
+      *ngIf="series.length > 0"
+    ></app-series-table>
+    <app-spinner [isLoading]="series.length === 0 ? true : false"></app-spinner>
   </section>
-  <section class="container-events">
+  <section id="container-events">
     <h2>Eventos</h2>
     <div class="events-list">
       <div *ngFor="let event of events" style="width: 200px;">

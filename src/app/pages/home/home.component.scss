@@ -1,4 +1,9 @@
-.home{
+h2 {
+  color: #d42026;
+  font-weight: lighter;
+}
+
+.home {
   margin: 20px 42px;
 
   @media only screen and (max-width: 800px) {
@@ -6,17 +11,12 @@
   }
 }
 
-h2{
-  color: #D42026;
-  font-weight: lighter;
+.bold-text {
+  font-weight: bold;
 }
 
-#header{
+#header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.bold-text{
-  font-weight: bold;
 }

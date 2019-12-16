@@ -2,11 +2,6 @@ table {
   width: 100%;
 }
 
-.mat-form-field {
-  font-size: 14px;
-  width: 100%;
-}
-
 img {
   border-radius: 50%;
   width: 58px;
@@ -14,13 +9,14 @@ img {
   margin-right: 25px;
 }
 
-td, th {
+td,
+th {
   width: 25%;
   padding: 10px;
   font-size: 1.2rem;
 }
 
-td{
+td {
   border-bottom: 2px solid rgba(212, 32, 38, 0.4);
   padding-top: 12px;
   padding-bottom: 12px;
@@ -32,16 +28,16 @@ th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #D42026;
+  background-color: #d42026;
   color: white;
 }
 
-th:nth-child(n+2){
-  border-left: 10px solid #FFF;
+th:nth-child(n + 2) {
+  border-left: 10px solid #fff;
   padding-left: 10px;
 }
 
-th.mat-header-cell{
+th.mat-header-cell {
   border-bottom-style: none;
 }
 
@@ -49,6 +45,11 @@ tr:hover {
   background-color: rgba(212, 32, 38, 0.1);
 }
 
-p{
+p {
   margin: 0 10px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
 }

@@ -1,4 +1,4 @@
-<div class="home" *ngIf="charactersList.length > 0">
+<div class="home">
   <section id="header">
     <h2>
       <span class="bold-text">
@@ -11,6 +11,7 @@
     <search-input></search-input>
   </section>
   <section id="characters-list">
-    <app-table [data]="charactersList"></app-table>
+    <app-table [data]="charactersList" *ngIf="charactersList.length > 0"></app-table>
+    <app-spinner [isLoading]="charactersList.length === 0 ? true : false"></app-spinner>
   </section>
 </div>
