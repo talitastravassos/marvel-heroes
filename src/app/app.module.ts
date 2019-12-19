@@ -26,6 +26,7 @@ import { SeriesTableComponent } from './components/series-table/series-table.com
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const matModules = [
   MatTableModule,
@@ -45,7 +46,8 @@ const matModules = [
     SeriesTableComponent,
     EventCardComponent,
     NavbarComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

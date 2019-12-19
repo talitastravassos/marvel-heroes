@@ -8,7 +8,7 @@ h3 {
 }
 
 #container-page {
-  margin: 20px 42px;
+  margin: 20px 42px 80px 42px;
 
   @media only screen and (max-width: 800px) {
     margin: 10px 10px;
@@ -21,6 +21,12 @@ h3 {
   @media only screen and (max-width: 800px) {
     flex-direction: column;
   }
+}
+
+.container {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
 }
 
 .buttons {

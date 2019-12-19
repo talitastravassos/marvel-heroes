@@ -1,17 +1,19 @@
-<div class="home">
-  <section id="header">
-    <h2>
-      <span class="bold-text">
-        <span style="text-decoration: underline #D42026;">BUS</span>CA MARVEL</span>
-      <span>TESTE FRONT-END</span>
-    </h2>
-    <h2>TALITA S. TRAVASSOS</h2>
-  </section>
-  <section id="search">
-    <search-input></search-input>
-  </section>
-  <section id="characters-list">
-    <app-table [data]="charactersList" *ngIf="charactersList.length > 0"></app-table>
-    <app-spinner [isLoading]="charactersList.length === 0 ? true : false"></app-spinner>
-  </section>
+<div class="container">
+  <div class="home">
+    <section id="header">
+      <h2>
+        <span class="bold-text">
+          <span style="text-decoration: underline #D42026;">Marvel</span> Heroes</span>
+
+      </h2>
+    </section>
+    <section id="search">
+      <search-input></search-input>
+    </section>
+    <section id="characters-list">
+      <app-table [data]="charactersList" *ngIf="charactersList.length > 0"></app-table>
+      <app-spinner [isLoading]="charactersList.length === 0 ? true : false"></app-spinner>
+    </section>
+  </div>
+  <app-footer></app-footer>
 </div>
